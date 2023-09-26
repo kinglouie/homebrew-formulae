@@ -3,11 +3,11 @@
 # frozen_string_literal: true
 
 # fyabai.rb
-class Fskhd < Formula
+class Myabai < Formula
   env :std
-  desc "Fork of skhd for my personal use"
-  homepage "https://github.com/FelixKratz/skhd"
-  head "https://github.com/FelixKratz/skhd.git"
+  desc "Fork of Yabai for my personal use"
+  homepage "https://github.com/kinglouie/yabai"
+  head "https://github.com/kinglouie/yabai.git", branch: "fork"
 
   depends_on :macos => :high_sierra
 
@@ -22,13 +22,13 @@ class Fskhd < Formula
     (var/"log/yabai").mkpath
 
     system "make", "-j1", "install"
-    system "codesign", "--force", "-s", "-", "#{buildpath}/bin/skhd"
+    system "codesign", "--force", "-s", "-", "#{buildpath}/bin/yabai"
 
-    bin.install "#{buildpath}/bin/skhd"
+    bin.install "#{buildpath}/bin/yabai"
   end
 
   service do
-    run "#{opt_bin}/skhd"
+    run "#{opt_bin}/yabai"
     environment_variables PATH: std_service_path_env
     keep_alive true
     process_type :interactive
