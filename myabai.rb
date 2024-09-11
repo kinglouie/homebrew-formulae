@@ -7,7 +7,7 @@ class Myabai < Formula
   env :std
   desc "Fork of Yabai for my personal use"
   homepage "https://github.com/kinglouie/yabai"
-  head "https://github.com/kinglouie/yabai.git", branch: "fork"
+  head "https://github.com/kinglouie/yabai.git", branch: "master"
 
   depends_on :macos => :high_sierra
 
